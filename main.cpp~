@@ -83,26 +83,34 @@ void visualization()
     plt::xlim(-10, 320 );
     plt::ylim(-10,170);
     
-        // Draw every grid of the map:
-    for (double x = 0; x < mapWidth / gridWidth; x++) {
-        cout << "Remaining Rows= " << mapWidth / gridWidth - x << endl;
-        for (double y = 0; y < mapHeight / gridHeight; y++) {
-            if (l[x][y] == 0) { //Green unkown state
-                plt::plot({ x }, { y }, "g.");
-            }
-            else if (l[x][y] > 0) { //Black occupied state
-                plt::plot({ x }, { y }, "k.");
-            }
-            else { //Red free state
-                plt::plot({ x }, { y }, "r.");
-            }
+    vector<vector<double> > xy(mapWidth / gridWidth, vector<double>(mapHeight / gridHeight));
+     int main() 
+{    
+    // Prepare data.
+    int tot = mapWidth / gridWidth * mapHeight / gridHeight; // number of data points
+    int m = mapWidth / gridWidth ;
+    int n =  mapHeight / gridHeight;
+    int p = 0
+    vector<double> x(m),y(n); 
+    for (int i = 0; i < n ; i ++) {
+        for (int j = 0 ; j < m ; j ++) {
+            x.at(p) = 
+            y.at(p) = 
         }
     }
+    // plot() takes an arbitrary number of (x,y,format)-triples. 
+    // x must be iterable (that is, anything providing begin(x) and end(x)),
+    // y must either be callable (providing operator() const) or iterable. 
+    plt::plot(x, y, "r-");
 
-    //Save the image and close the plot
-    plt::save("./Images/Map.png");
-    plt::clf();
 
+    // show plots
+    plt::show();
+} 
+    //Loop over the log odds values of the cells and plot each cell state. 
+    //Unkown state: green color, occupied state: black color, and free state: red color 
+    
+    //Save the image and close the plot 
 }
 
 int main()
